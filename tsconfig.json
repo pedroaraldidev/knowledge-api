@@ -5,9 +5,15 @@
     "moduleResolution": "NodeNext",
     "rootDir": "src",
     "outDir": "dist",
+    "baseUrl": "src",
     "strict": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@modules/*": ["modules/*"],
+      "@core/*": ["core/*"],
+      "@users/*": ["modules/users/*"],
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
