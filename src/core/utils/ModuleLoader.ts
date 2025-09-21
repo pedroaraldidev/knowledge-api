@@ -12,9 +12,7 @@ export interface ModuleInfo {
 export class ModuleLoader {
   private static readonly MODULES_PATH = path.join(__dirname, "../../modules");
 
-  /**
-   * Carrega automaticamente todos os módulos e seus routers
-   */
+ 
   public static async loadModules(): Promise<ModuleInfo[]> {
     const modules: ModuleInfo[] = [];
     
@@ -37,9 +35,6 @@ export class ModuleLoader {
     }
   }
 
-  /**
-   * Carrega um módulo específico
-   */
   private static async loadModule(moduleName: string): Promise<ModuleInfo | null> {
     try {
       const modulePath = path.join(this.MODULES_PATH, moduleName);
@@ -86,9 +81,6 @@ export class ModuleLoader {
     }
   }
 
-  /**
-   * Registra todos os módulos no app Express
-   */
   public static async registerModules(app: any): Promise<void> {
     const modules = await this.loadModules();
     
